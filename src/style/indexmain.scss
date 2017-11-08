@@ -83,17 +83,16 @@ header {
 
 .div3 {
   width: 100%;
-  background: #ffc84a;
+
 }
 
 .div4 {
   display: flex;
   width: 100%;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 4rem;
 }
 .tarifs{
-  padding-top: 2rem;
   width: 100%;
   display: table;
   margin-bottom: 5rem;
@@ -109,6 +108,7 @@ header {
 
 .div6 {
   width: 100%;
+  padding-bottom: 3rem;
 }
 
 .hm_list {
@@ -382,9 +382,21 @@ header {
 .carpark {
   display: flex;
   flex-direction: column;
-  padding-top: 31px;
+
+  margin: 0 auto;
+  width: 100%;
+
+  .cp-cell:first-child{
+    margin-left: calc((100% / 12) * 1);
+  }
 }
 
+.cp-c1{
+  width: calc((100% / 12) * 6);
+}
+.cp-c2{
+  width: calc((100% / 12) * 6);
+}
 .title {
   font-size: 24px;
   padding: 10px 0;
@@ -469,14 +481,17 @@ header {
   align-items: center;
   padding: 10px 135px;
   border-top: 3px solid rgba(255, 255, 255, 0.51);
+  h2{
+    margin: 0;
+  }
 }
 
 .table-menu > div {
   display: table-cell;
   padding: 1rem 0;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #ddd;
   text-align: center;
-  width: 50%;
+  width: 33%;
 }
 
 .menu-table {
@@ -540,12 +555,18 @@ header {
   height: 100vh;
   width: 100%;
   align-items: center;
-  justify-content: center;
+  //justify-content: center;
   flex-direction: column;
   display: flex;
+  overflow: hidden;
+  transition: transform .5s linear;
 
+  &:hover .bricks_text_img{
+    transform: scale(1.05);
+  }
 }
 .bricks_text_img{
+  transition: transform 1s ease-in-out;
   background-image: url("/images/new/prime.jpg") ;
   background-size: cover;
   position: absolute;
@@ -588,7 +609,10 @@ header {
 }
 .delivery_map2{
   width: 50%;
-  padding-right: calc(100% / 11);
+  &:not(:first-child){
+    padding-left: calc(100% / 12);
+  }
+
 }
 .delivery_map_info {
   text-align: center;
@@ -621,8 +645,7 @@ header {
 }
 
 .map_info {
-  width: 82%;
-  margin: 0 auto;
+
   padding: 5px 0;
 }
 
@@ -632,26 +655,71 @@ header {
 }
 
 .footer_main {
-  width: 92%;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .footer_info {
-  width: 25%;
+  //width: 25%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
   justify-content: center;
   color: white;
   a {
     text-decoration: none;
     color: white;
+    display: inline;
   }
 
 }
+.footer_mib {
+  white-space: nowrap;
+  display: flex;
+  color: white;
+  a {
+    //text-decoration: none;
+    color: white;
+    display: inline;
+  }
+}
+.footer_p{
+  font-size: 14px;
+}
+.cp-w{
+  display: flex;
+  flex-direction: column;
+}
+.cp-row{
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
 
+  .limiter{
+    display: flex;
+    margin: 0;
+  }
+  &:nth-child(2n + 1){
+    background: #ffc84a;
+  }
+}
+.cp-c2{
+  padding-right: 1rem;
+}
+.cp-c1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 1rem;
+}
+.cp-cell{
+  display: flex;
+  justify-content: flex-start;
+}
 @media screen and (max-width: 768px) {
   body {
     align-items: flex-start;
